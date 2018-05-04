@@ -12,11 +12,7 @@
 function calculate_digits(npags) {
   var r = 0, l = npags.toString().length;
   for(var k = 1, powOf = 0; k <= l; k++, powOf++) {
-    if(k === l) {
-    r += (npags - Math.pow(10, powOf) + 1) * k;
-    } else {
-    r += k * 9 * Math.pow(10, powOf);
-    }
+    r += k === l ? ((npags - Math.pow(10, powOf) + 1) * k) : (k * 9 * Math.pow(10, powOf));
   }
   return r;
 }
